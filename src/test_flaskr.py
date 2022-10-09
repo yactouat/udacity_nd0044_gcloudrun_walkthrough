@@ -22,7 +22,7 @@ class AppTestCase(unittest.TestCase):
         res = self.client().get('/api')
         self.assertEqual(res.status_code, 200)
         self.assertIsNone(res.json["data"])
-        self.assertEqual(res.json["msg"], "API is up")
+        self.assertEqual(res.json["msg"], "wrong message")
 
 
 # Make the tests conveniently executable
