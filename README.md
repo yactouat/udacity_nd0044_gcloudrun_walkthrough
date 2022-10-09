@@ -33,7 +33,7 @@ This forkable repo aims at giving a walkthrough on how to deploy applications on
 - you use GitHub
 - Docker Desktop
 - have the `gcloud` CLI installed on your machine, a GCP project, and a Docker repository set up
-- having bought a domain name, preferably on Google Domains
+- OPTIONAL: having bought a domain name, preferably on Google Domains
 
 #### `gcloud` CLI and GCP project setup
 
@@ -71,6 +71,8 @@ Manual deploys are useful during the development process, if you want to see the
 
 #### deploy the image on Cloud Run
 
+europe-west6-docker.pkg.dev/yactouat/udacity-cicd/sampleflask:0.0.1
+
 - to deploy from source, replacing the placeholders (without the `{}`, to replace with the data of your Google Cloud project) => `gcloud run deploy {serviceName-staging|prod} --image={gCloudRegion}-docker.pkg.dev/{projectId}/{nameOfTheArtifactRegistryRepo}/{nameOfYourContainer}:{tag} --port={portOfYourService} --allow-unauthenticated`
 - for instance, staging env Cloud Run service name can be `udacity-cicd-staging`
 - if you have permissions issues because you are running this for the first time, just wait a few minutes and retry later
@@ -91,7 +93,7 @@ One build trigger to configure in the GCP UI =>
 - automated tests are run in the pipeline steps
 - to push a tag => `git tag tag_name && git push origin tag_name`
 - cloud build steps are specified in the `./cloudbuild.yaml` folder
-- all images are sent to GCP's Artifact Registry 
+- all images are sent to GCP's Artifact Registry
 
 #### clean up
 

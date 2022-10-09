@@ -16,8 +16,7 @@ COPY ./src .
 
 # watch app' files
 ENV FLASK_APP=flaskr
-ENV FLASK_DEBUG=True
-ENV FLASK_ENV=development
+ENV FLASK_ENV=production
 
 # Run the web service on container startup. Here we use the gunicorn
 # webserver, with one worker process and 8 threads.
